@@ -23,12 +23,12 @@ requirements:
 
 test:
   imports:
-    - rpnpy.librmn.all as rmn
-    - rpnpy.vgd.all as vgd
-    - rpnpy.utils.fstd3d as fstd3d
-    - rpnpy.rpndate import RPNDate
-    - rpnpy.burpc.all as brp
-    - rpnpy.tdpack.all as tdpack
+    - rpnpy.librmn.all
+    - rpnpy.vgd.all
+    - rpnpy.utils.fstd3d
+    - rpnpy.rpndate
+    - rpnpy.burpc.all
+    - rpnpy.tdpack.all
 
 about:
   home: https://wiki.cmc.ec.gc.ca/wiki/Python-RPN
