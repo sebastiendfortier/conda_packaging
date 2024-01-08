@@ -80,8 +80,8 @@ WORKDIR /home/$UNAME
 RUN mkdir rmn_libs &&\
     cp `find /lib -maxdepth 1 -name "*so*" -type f | grep -v ompi` rmn_libs/. &&\
     cp /lib/libez*.a rmn_libs/. &&\
-    cp /usr/lib/x86_64-linux-gnu/libgfortran.so* rmn_libs/.
-
+    if [ -d "/usr/lib/x86_64-linux-gnu" ]; then cp /usr/lib/x86_64-linux-gnu/libgfortran.so* rmn_libs/.; fi && \
+    if [ -d "/usr/lib/powerpc64le-linux-gnu" ]; then cp /usr/lib/powerpc64le-linux-gnu/libgfortran.so* rmn_libs/.; fi
 
 RUN rm -rf /*.deb && \
     rm -rf /home/$UNAME/gitlab
