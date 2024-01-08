@@ -187,4 +187,4 @@ WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
 
 RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/.conda/envs/builder/conda-bld/linux-64/
+WORKDIR /home/$UNAME/.conda/envs/builder/conda-bld/
