@@ -1,0 +1,20 @@
+package:
+  name: eccc_libburpc
+  version: 1.17
+
+
+about:
+  license: LGPL-3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: 'CMC libburpc library'
+  build_environment:
+    - linux-64
+    - glibc=2.23
+
+requirements:
+  run:
+    - eccc_librmn >=20.0.3
+
+source:
+  path: ../../libburpc

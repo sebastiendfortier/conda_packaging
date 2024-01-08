@@ -1,0 +1,41 @@
+{% set name = "domcmc" %}
+{% set version = "2.1.3" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  path: ../domcmc
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - pip
+    - python
+
+  run:
+    - numpy >=1.17.0
+    - python
+    - pytz
+    - scipy
+    - eccc_rpnpy >=2.2.0rc3
+
+test:
+  imports:
+    - domcmc
+
+about:
+  home: "https://gitlab.science.gc.ca/dja001/domcmc"
+  license: GPL-3.0
+  license_family: GPL
+  license_file: LICENSE
+  summary: "dominik's tools for reading fst files"
+  doc_url:
+  dev_url:
+
+extra:
+  recipe-maintainers:
+    - dja001

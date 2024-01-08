@@ -1,0 +1,41 @@
+package:
+  name: eccc_rpnpy
+  version: 2.2.0rc3
+
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pytz
+    - numpy >1.22
+
+  run:
+    - python
+    - pytz
+    - numpy
+    - scipy
+    - eccc_librmn >=20.0.3
+    - eccc_libezinterpv >=20.0.1
+    - eccc_libtdpack >=1.6.3
+    - eccc_libvgrid >=6.9.3
+    - eccc_libburpc >=1.17
+
+test:
+  imports:
+    - rpnpy.librmn.all as rmn
+    - rpnpy.vgd.all as vgd
+    - rpnpy.utils.fstd3d as fstd3d
+    - rpnpy.rpndate import RPNDate
+    - rpnpy.burpc.all as brp
+    - rpnpy.tdpack.all as tdpack
+
+about:
+  home: https://wiki.cmc.ec.gc.ca/wiki/Python-RPN
+  license: LGPL-3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: 'CMC python rpn library'
+
+source:
+  path: ../python-rpn

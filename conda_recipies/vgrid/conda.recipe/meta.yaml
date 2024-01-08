@@ -1,0 +1,23 @@
+package:
+  name: eccc_libvgrid
+  version: 6.9.3
+
+
+about:
+  home: https://wiki.cmc.ec.gc.ca/wiki/Librmn
+  license: LGPL-3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: 'CMC vgrid library'
+  build_environment:
+   - linux-64
+   - glibc=2.23
+
+
+requirements:
+  run:
+    - eccc_librmn >=20.0.3
+    - eccc_support_libs >=2023.12.0
+
+source:
+  path: ../../vgrid

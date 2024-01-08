@@ -1,0 +1,20 @@
+package:
+  name: eccc_libtdpack
+  version: 1.6.3.1
+
+
+about:
+  license: LGPL-3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: 'CMC tdpack library'
+  build_environment:
+    - linux-64
+    - glibc=2.23
+
+requirements:
+  run:
+    - eccc_support_libs >=2023.12.0
+
+source:
+  path: ../../tdpack

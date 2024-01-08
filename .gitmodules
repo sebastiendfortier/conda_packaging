@@ -1,0 +1,13 @@
+[submodule "conda_recipies/python-rpn/python-rpn"]
+	path = conda_recipies/python-rpn/python-rpn
+	url = https://github.com/sebastiendfortier/python-rpn.git
+[submodule "conda_recipies/fstpy/fstpy"]
+	path = conda_recipies/fstpy/fstpy
+	url = https://github.com/sebastiendfortier/fstpy.git
+[submodule "conda_recipies/fstd2nc/fstd2nc"]
+	path = conda_recipies/fstd2nc/fstd2nc
+	url = https://github.com/neishm/fstd2nc.git
+	branch = dev
+[submodule "conda_recipies/domcmc/domcmc"]
+	path = conda_recipies/domcmc/domcmc
+	url = https://github.com/sebastiendfortier/domcmc.git

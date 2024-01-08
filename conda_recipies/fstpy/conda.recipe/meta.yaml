@@ -1,0 +1,32 @@
+package:
+  name: fstpy
+  version: 2023.11.00
+
+
+requirements:
+  build:
+    - python
+    - pandas >=1.2.4
+    - numpy >=1.19.5
+    - dask >=2021.8.0
+
+  run:
+    - python
+    - pandas >=1.2.4
+    - numpy >=1.19.5
+    - dask >=2021.8.0
+    - eccc_rpnpy >=2.2.0rc3
+
+test:
+  imports:
+    - fstpy
+
+about:
+  home: https://gitlab.science.gc.ca/CMDS/fstpy
+  license: GPL-3.0
+  license_family: GPL
+  license_file: LICENSE
+  summary: 'Pandas/dask interface for RPN standard files (from Environment Canada).'
+
+source:
+  path: ../fstpy

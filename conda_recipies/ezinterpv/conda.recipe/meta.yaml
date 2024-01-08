@@ -1,0 +1,16 @@
+package:
+  name: eccc_libezinterpv
+  version: 20.0.1
+
+
+about:
+  license: LGPL-3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: 'CMC ezinterpv library'
+  build_environment:
+    - linux-64
+    - glibc=2.23
+
+source:
+  path: ../../ezinterpv
