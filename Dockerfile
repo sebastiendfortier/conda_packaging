@@ -122,14 +122,25 @@ WORKDIR /home/$UNAME
 
 RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 
-RUN cp /home/$UNAME/rmn_libs/libezint* ezinterpv/lib/. && \
-    cp /home/$UNAME/rmn_libs/libburp_c.so* libburpc/lib/. && \
+RUN mkdir -p ezinterpv/lib && \
+    cp /home/$UNAME/rmn_libs/libezint* ezinterpv/lib/. 
+
+RUN mkdir -p libburpc/lib && \
+    cp /home/$UNAME/rmn_libs/libburp_c.so* libburpc/lib/. 
+
+RUN mkdir -p librmn/lib && \
     cp /home/$UNAME/rmn_libs/librmn.so* librmn/lib/. && \
-    cp /home/$UNAME/rmn_libs/libApp.so* librmn/lib/. && \
-    cp /home/$UNAME/rmn_libs/libgfortran.so.*.*.* support_libraries/lib/. && \
-    cp /home/$UNAME/rmn_libs/libvgrid.so* vgrid/lib/. &&\
+    cp /home/$UNAME/rmn_libs/libApp.so* librmn/lib/. 
+
+RUN mkdir -p support_libraries/lib && \
+    cp /home/$UNAME/rmn_libs/libgfortran.so.*.*.* support_libraries/lib/. 
+
+RUN mkdir -p vgrid/lib && \
+    cp /home/$UNAME/rmn_libs/libvgrid.so* vgrid/lib/. 
+
+RUN mkdir -p tdpack/lib && \
     cp /home/$UNAME/rmn_libs/libtdpack.so* tdpack/lib/.
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ezinterpv
