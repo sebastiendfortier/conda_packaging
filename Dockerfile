@@ -179,6 +179,8 @@ RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstpy
 
+RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstpy/setup.py
+
 RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
