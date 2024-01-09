@@ -182,4 +182,10 @@ RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 COPY transfer.sh /home/$UNAME/transfer.sh 
 
+USER root
+
+RUN rm -rf /*.deb
+
+USER $UNAME
+
 WORKDIR /home/$UNAME/.conda/envs/builder/conda-bld/
