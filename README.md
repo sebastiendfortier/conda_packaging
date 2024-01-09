@@ -23,7 +23,7 @@ make build-nc
 ```
 
 ### transfer
-- trtansfers the archives to a local directory of your choosing (the image must be built)
+- transfers the archives to a local directory of your choosing (the image must be built)
 
 ```shell   
 export CONDA_ARCHIVES=/path  
