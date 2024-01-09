@@ -98,23 +98,16 @@ ARG GNAME
 RUN groupadd -g $GID -o $GNAME && \
     useradd -u $UID -g $GID -ms /bin/bash $UNAME 
 
-
-#COPY conda_recipies  /home/$UNAME/conda_recipies
-
-#RUN chown -R $UNAME:$GNAME /home/$UNAME/conda_recipies
-
 SHELL ["/bin/bash", "-c"]
 
 COPY 02nocache /etc/apt/apt.conf.d/02nocache
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/01_nodoc
-
 
 RUN apt-get update -y && apt-get install -y make git
 
 USER $UNAME
 
 RUN mamba create -q -y -n builder boa conda-build conda-verify anaconda-client 
-
 
 COPY --from=builder /home/$UNAME/rmn_libs /home/$UNAME/rmn_libs
 

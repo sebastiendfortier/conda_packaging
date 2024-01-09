@@ -5,12 +5,13 @@ build:
 
 build-nc:
 	docker build --no-cache --build-arg TAG=$(UBUNTU_IMAGE_TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g) --build-arg UNAME=$(USER) --build-arg GNAME=$(shell id -gn) -t rmn_libs_ubuntu_$(UBUNTU_IMAGE_TAG) -f Dockerfile .
+
 #run16:
 #	if [ -d "$(DIRECTORY)" ]; then \
 #		rm -rf $(DIRECTORY); \
 #	fi; \
 #	mkdir -p $(DIRECTORY)
-#	docker run -it -v $(DIRECTORY):/home/$(USER)/data rmn_libs_ubuntu_$(UBUNTU_IMAGE_TAG) /bin/bash -c "cp rmn_libs/* data/."
+#	docker run -it -v $(DIRECTORY):/home/$(USER)/data rmn_libs_ubuntu_$(UBUNTU_IMAGE_TAG) /bin/bash -c "cp $(find /home/$(USER)/.conda/envs/builder/conda-bld/ -type f -name eccc_*.tar.bz2) data/. ; "
 #	echo "copied libs to $(DIRECTORY)"
 
 run:
