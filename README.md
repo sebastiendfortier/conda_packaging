@@ -1,6 +1,7 @@
 # Docker image to build RPN-SI libs for python-rpn python package   
 
-## Build   
+## Makefile targets
+### Build   
 
 - Prepares ubuntu:$UBUNTU_IMAGE_TAG with the necessary tools to build RPN-SI libraries    
 - Get the sources   
@@ -14,7 +15,22 @@ export UBUNTU_IMAGE_TAG=16.04
 make build   
 ``` 
 
-## Run
+### Build without cache
+
+```shell   
+export UBUNTU_IMAGE_TAG=16.04   
+make build-nc   
+```
+
+### transfer
+- trtansfers the archives to a local directory of your choosing (the image must be built)
+
+```shell   
+export CONDA_ARCHIVES=/path  
+make transfer   
+```
+
+### Run
 
 To export the packages to anaconda, run the container, you should end up in a folder with all built conda archives ready for upload.     
 
@@ -28,7 +44,7 @@ anaconda login   # enter your credentials
 anaconda upload <pkgname>.tar.bz2        
 ```
 
-## Clean
+### Clean
 
 Will clean the docker images  
 
@@ -160,6 +176,8 @@ conda mambabuild conda.recipe -c <necessary channels to find dependencies other 
 - result should look like this
 ```shell
 ~/.conda/envs/builder/conda-bld/linux-64/eccc_rpnpy-2.2.0rc3-py311he53d0f1_0.tar.bz2
+~/.conda/envs/builder/conda-bld/linux-64/eccc_rpnpy-2.2.0rc3-py310he53d0f1_0.tar.bz2
+~/.conda/envs/builder/conda-bld/linux-64/eccc_rpnpy-2.2.0rc3-py39he53d0f1_0.tar.bz2
 ```
 
 ## Upload the package
@@ -170,7 +188,7 @@ conda mambabuild conda.recipe -c <necessary channels to find dependencies other 
 . activate builder
 anaconda login
 # enter your credentials
-anaconda upload ~/.conda/envs/builder/conda-bld/linux-64/eccc_rpnpy-2.2.0rc3-py311he53d0f1_0.tar.bz2
+anaconda upload ~/.conda/envs/builder/conda-bld/linux-64/eccc_rpnpy-2.2.0rc3-py311he53d0f1_0.tar.bz2 ~/.conda/envs/builder/conda-bld/linux-64/eccc_rpnpy-2.2.0rc3-py310he53d0f1_0.tar.bz2 ~/.conda/envs/builder/conda-bld/linux-64/eccc_rpnpy-2.2.0rc3-py39he53d0f1_0.tar.bz2
 ```
 
 
