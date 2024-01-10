@@ -1,0 +1,46 @@
+package:
+  name: fstcatalog
+  version: 2023.06.07
+
+build:
+  number: 1
+  noarch: python
+
+requirements:
+  build:
+    - python
+    - pandas >=1.2.4
+    - numpy >=1.19.5
+    - dask >=2021.8.0
+
+  run:
+    - python
+    - pandas >=1.2.4
+    - numpy >=1.19.5
+    - cartopy >=0.21.0
+    - geoviews >=1.9.6
+    - hvplot >=0.8.2
+    - intake >=0.6.8
+    - pyproj >=3.3.1
+    - xarray >=2023.2.0
+    - eccc_rpnpy >=2.2.0rc3
+    - cmcdict >=2023.05.18
+    - fstd2nc >=0.20231105.1
+    - fstpy >=2023.11.00
+
+
+test:
+  imports:
+    - fstcatalog
+
+about:
+  home: https://github.com/sebastiendfortier/fstcatalog
+  license: GPL-3.0
+  license_family: GPL
+  license_file: LICENSE
+  summary: 'MSC python utility for cataloging fst files into an intake catalog'
+
+source:
+  path: ../fstcatalog
+
+ 

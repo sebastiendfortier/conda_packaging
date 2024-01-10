@@ -1,6 +1,6 @@
 package:
-  name: fstpy
-  version: 2023.11.00
+  name: spookipy
+  version: 2023.05.00
 
 build:
   number: 0
@@ -19,18 +19,21 @@ requirements:
     - numpy >=1.19.5
     - dask >=2021.8.0
     - eccc_rpnpy >=2.2.0rc3
+    - fstpy >=2023.11.00
 
 test:
   imports:
-    - fstpy
+    - spookipy
 
 about:
-  home: https://github.com/sebastiendfortier/fstpy
-  license: GPL-3.0
-  license_family: GPL
+  home: https://github.com/sebastiendfortier/spookipy
+  license: LGPL-3.0
+  license_family: LGPL
   license_file: LICENSE
-  summary: 'MSC Pandas/dask interface for RPN standard files (from Environment Canada).'
+  summary: 'MSC collection of python algorithms that work with dataframes obtained with fstpy or numpy arrays.'
 
 source:
-  path: ../fstpy
+  path: ../spookipy
+
+
  
