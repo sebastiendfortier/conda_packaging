@@ -11,3 +11,15 @@
 [submodule "conda_recipies/domcmc/domcmc"]
 	path = conda_recipies/domcmc/domcmc
 	url = https://github.com/sebastiendfortier/domcmc.git
+[submodule "conda_recipies/ci_fstcomp/ci_fstcomp"]
+	path = conda_recipies/ci_fstcomp/ci_fstcomp
+	url = https://github.com/sebastiendfortier/ci_fstcomp.git
+[submodule "conda_recipies/cmcdict/cmcdict"]
+	path = conda_recipies/cmcdict/cmcdict
+	url = https://github.com/sebastiendfortier/cmcdict.git
+[submodule "conda_recipies/fstcatalog/fstcatalog"]
+	path = conda_recipies/fstcatalog/fstcatalog
+	url = https://github.com/sebastiendfortier/fstcatalog.git
+[submodule "conda_recipies/spookipy/spookipy"]
+	path = conda_recipies/spookipy/spookipy
+	url = https://github.com/sebastiendfortier/spookipy.git
