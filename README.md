@@ -117,7 +117,7 @@ about:
   license: LGPL-3.0
   license_family: LGPL
   license_file: LICENSE
-  summary: 'CMC python rpn library'
+  summary: 'MSC python rpn library'
 
 source:
   path: ../python-rpn
