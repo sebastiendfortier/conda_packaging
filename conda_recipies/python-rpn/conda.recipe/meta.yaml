@@ -4,7 +4,6 @@ package:
 
 build:
   number: 0
-  noarch: python
 
 requirements:
   build:
@@ -42,4 +41,4 @@ about:
 
 source:
   path: ../python-rpn
- 
+  

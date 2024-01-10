@@ -16,7 +16,7 @@ requirements:
   build:
     - pip
     - python
-
+ 
   run:
     - numpy >=1.17.0
     - python

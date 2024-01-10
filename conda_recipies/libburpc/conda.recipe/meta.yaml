@@ -7,7 +7,7 @@ about:
   license: LGPL-3.0
   license_family: LGPL
   license_file: LICENSE
-  summary: 'CMC libburpc library'
+  summary: 'MSC libburp_c library'
   build_environment:
     - linux-64
     - glibc=2.23
@@ -18,3 +18,4 @@ requirements:
 
 source:
   path: ../../libburpc
+ 

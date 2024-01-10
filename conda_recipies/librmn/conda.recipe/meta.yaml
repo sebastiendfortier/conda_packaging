@@ -8,7 +8,7 @@ about:
   license: LGPL-3.0
   license_family: LGPL
   license_file: LICENSE
-  summary: 'CMC rmn library'
+  summary: 'MSC rmn library'
   build_environment:
     - linux-64
     - glibc=2.23
@@ -19,3 +19,4 @@ requirements:
 
 source:
   path: ../../librmn
+ 

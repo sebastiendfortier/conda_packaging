@@ -8,7 +8,7 @@ about:
   license: LGPL-3.0
   license_family: LGPL
   license_file: LICENSE
-  summary: 'CMC vgrid library'
+  summary: 'MSC vgrid library'
   build_environment:
    - linux-64
    - glibc=2.23
@@ -21,3 +21,4 @@ requirements:
 
 source:
   path: ../../vgrid
+ 

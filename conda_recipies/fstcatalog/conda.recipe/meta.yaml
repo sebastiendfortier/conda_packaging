@@ -28,7 +28,7 @@ requirements:
     - fstd2nc >=0.20231105.1
     - fstpy >=2023.11.00
 
-
+ 
 test:
   imports:
     - fstcatalog
