@@ -103,7 +103,7 @@ SHELL ["/bin/bash", "-c"]
 COPY 02nocache /etc/apt/apt.conf.d/02nocache
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/01_nodoc
 
-RUN apt-get update -y && apt-get install -y make git nano
+RUN apt-get update -y && apt-get install -y make git nano unzip
 
 USER $UNAME
 
@@ -188,4 +188,4 @@ RUN rm -rf /*.deb
 
 USER $UNAME
 
-WORKDIR /home/$UNAME/.conda/envs/builder/conda-bld/
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies

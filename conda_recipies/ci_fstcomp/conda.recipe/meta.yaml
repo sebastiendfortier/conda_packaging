@@ -13,7 +13,7 @@ requirements:
     - tzdata
 
   run:
-    - python 
+    - python
     - numpy >=1.19.5
     - pandas >=1.2.4
     - eccc_rpnpy >=2.2.0rc3
