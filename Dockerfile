@@ -103,7 +103,7 @@ SHELL ["/bin/bash", "-c"]
 COPY 02nocache /etc/apt/apt.conf.d/02nocache
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/01_nodoc
 
-RUN apt-get update -y && apt-get install -y make git
+RUN apt-get update -y && apt-get install -y make git nano
 
 USER $UNAME
 
