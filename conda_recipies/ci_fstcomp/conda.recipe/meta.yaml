@@ -10,10 +10,7 @@ requirements:
   build:
     - python
     - numpy >=1.19.5
-    - tzdata
-    - pytz
     - pandas >=1.2.4
-    - dateutil
 
   run:
     - python
