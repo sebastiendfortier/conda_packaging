@@ -136,49 +136,49 @@ RUN mkdir -p vgrid/lib && \
 RUN mkdir -p tdpack/lib && \
     cp /home/$UNAME/rmn_libs/libtdpack.so* tdpack/lib/.
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ezinterpv
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ezinterpv
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/support_libraries
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/support_libraries
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/librmn
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/librmn
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/libburpc
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/libburpc
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/vgrid
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/vgrid
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/tdpack
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/tdpack
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/python-rpn
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/python-rpn
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstd2nc
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstd2nc
 
-RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstd2nc/setup.py
+# RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstd2nc/setup.py
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstpy
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstpy
 
-RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstpy/setup.py
+# RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstpy/setup.py
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 COPY transfer.sh /home/$UNAME/transfer.sh 
 
