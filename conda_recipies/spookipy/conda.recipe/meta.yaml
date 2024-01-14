@@ -4,7 +4,6 @@ package:
 
 build:
   number: 0
-  noarch: python
 
 requirements:
   build:
@@ -12,12 +11,15 @@ requirements:
     - pandas >=1.2.4
     - numpy >=1.19.5
     - dask >=2021.8.0
+    - xarray
+    - fstpy >=2023.11.00
 
   run:
     - python
     - pandas >=1.2.4
     - numpy >=1.19.5
     - dask >=2021.8.0
+    - xarray
     - eccc_rpnpy >=2.2.0rc3
     - fstpy >=2023.11.00
 

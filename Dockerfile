@@ -176,6 +176,14 @@ RUN mkdir -p tdpack/lib && \
 
 # RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ci_fstcomp
+
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/spookipy
+
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+
 # WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
 
 # RUN source activate builder && conda mambabuild conda.recipe -c fortiers
