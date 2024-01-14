@@ -86,10 +86,22 @@ RUN mkdir rmn_libs &&\
 RUN rm -rf /*.deb && \
     rm -rf /home/$UNAME/gitlab
 
-
 ##############################################################################
 
-FROM condaforge/miniforge3:latest as conda
+# FROM condaforge/miniforge3:latest as conda
+FROM ubuntu:$TAG as conda
+
+ARG ARCHITECTURE
+
+RUN apt-get update -y &&\
+    apt-get install -y wget bzip2 make gfortran git nano unzip
+
+# Download and install Miniforge3
+RUN wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-${ARCHITECTURE}.sh && \
+    bash Miniforge3-Linux-${ARCHITECTURE}.sh -b -p /opt/conda && \
+    rm Miniforge3-Linux-${ARCHITECTURE}.sh
+
+ENV PATH=$PATH:/opt/conda/bin
 
 ARG UID
 ARG GID
@@ -103,8 +115,6 @@ SHELL ["/bin/bash", "-c"]
 COPY 02nocache /etc/apt/apt.conf.d/02nocache
 COPY 01_nodoc /etc/dpkg/dpkg.cfg.d/01_nodoc
 
-RUN apt-get update -y && apt-get install -y make git nano unzip
-
 USER $UNAME
 
 RUN mamba create -q -y -n builder boa conda-build conda-verify anaconda-client 
@@ -113,7 +123,7 @@ COPY --from=builder /home/$UNAME/rmn_libs /home/$UNAME/rmn_libs
 
 WORKDIR /home/$UNAME
 
-RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && sleep 1
+RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && sleep 2
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 
@@ -136,57 +146,57 @@ RUN mkdir -p vgrid/lib && \
 RUN mkdir -p tdpack/lib && \
     cp /home/$UNAME/rmn_libs/libtdpack.so* tdpack/lib/.
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ezinterpv
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ezinterpv
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/support_libraries
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/support_libraries
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/librmn
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/librmn
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/libburpc
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/libburpc
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/vgrid
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/vgrid
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/tdpack
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/tdpack
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/python-rpn
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/python-rpn
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstd2nc
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstd2nc
 
-# RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstd2nc/setup.py
+RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstd2nc/setup.py
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstpy
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstpy
 
-# RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstpy/setup.py
+RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstpy/setup.py
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ci_fstcomp
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/ci_fstcomp
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/spookipy
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/spookipy
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 COPY transfer.sh /home/$UNAME/transfer.sh 
 

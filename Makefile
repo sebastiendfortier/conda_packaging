@@ -1,10 +1,10 @@
 DIRECTORY = $(CONDA_ARCHIVES)/packages
 
 build:
-	docker build --build-arg TAG=$(UBUNTU_IMAGE_TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g) --build-arg UNAME=$(USER) --build-arg GNAME=$(shell id -gn) -t rmn_libs_ubuntu_$(UBUNTU_IMAGE_TAG) -f Dockerfile .
+	docker build --build-arg ARCHITECTURE=$(shell uname -m) --build-arg TAG=$(UBUNTU_IMAGE_TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g) --build-arg UNAME=$(USER) --build-arg GNAME=$(shell id -gn) -t rmn_libs_ubuntu_$(UBUNTU_IMAGE_TAG) -f Dockerfile .
 
 build-nc:
-	docker build --no-cache --build-arg TAG=$(UBUNTU_IMAGE_TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g) --build-arg UNAME=$(USER) --build-arg GNAME=$(shell id -gn) -t rmn_libs_ubuntu_$(UBUNTU_IMAGE_TAG) -f Dockerfile .
+	docker build --no-cache --build-arg ARCHITECTURE=$(shell uname -m) --build-arg TAG=$(UBUNTU_IMAGE_TAG) --build-arg UID=$(shell id -u) --build-arg GID=$(shell id -g) --build-arg UNAME=$(USER) --build-arg GNAME=$(shell id -gn) -t rmn_libs_ubuntu_$(UBUNTU_IMAGE_TAG) -f Dockerfile .
 
 transfer: build
 	if [ -d "$(DIRECTORY)" ]; then \
