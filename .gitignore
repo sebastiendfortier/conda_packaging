@@ -1,1 +1,7 @@
 *.tar.bz2
+conda_recipies/ezinterpv/lib
+conda_recipies/libburpc/lib
+conda_recipies/librmn/lib
+conda_recipies/support_libraries/lib
+conda_recipies/tdpack/lib
+conda_recipies/vgrid/lib
