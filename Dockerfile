@@ -192,6 +192,8 @@ RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/spookipy
 
+RUN sed -i "s/, 'fstpy>=2023.11.0'//g" spookipy/setup.py
+
 RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
