@@ -1,9 +1,9 @@
 package:
   name: fstd2nc
-  version: 0.20231105.1
+  version: 0.20231105.2
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
