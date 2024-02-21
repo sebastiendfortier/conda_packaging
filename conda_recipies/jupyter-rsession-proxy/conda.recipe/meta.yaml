@@ -1,0 +1,27 @@
+package:
+  name: jupyter-rsession-proxy
+  version: 2.1.0
+
+build:
+  number: 0
+  noarch: python
+
+requirements:
+  build:
+    - python
+    - jupyter-server-proxy>=3.2.2
+
+  run:
+    - python
+    - jupyter-server-proxy>=3.2.2
+
+about:
+  home: https://github.com/sebastiendfortier/jupyter-rsession-proxy
+  license: BSD clause 3
+  license_family: BSD
+  license_file: LICENSE
+  summary: 'jupyter-rsession-proxy provides Jupyter server and notebook extensions to proxy RStudio.'
+
+source:
+  path: ../jupyter-rsession-proxy
+
