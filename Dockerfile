@@ -123,7 +123,7 @@ COPY --from=builder /home/$UNAME/rmn_libs /home/$UNAME/rmn_libs
 
 WORKDIR /home/$UNAME
 
-RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && sleep 2
+RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && sleep 3
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 
@@ -197,6 +197,10 @@ RUN sed -i "s/, 'fstpy>=2023.11.0'//g" spookipy/setup.py
 RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/domcmc
+
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/jupyter-rsession-proxy
 
 RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
