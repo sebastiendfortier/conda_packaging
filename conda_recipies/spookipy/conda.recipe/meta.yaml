@@ -1,9 +1,9 @@
 package:
   name: spookipy
-  version: 2023.05.00
+  version: 2024.01.00
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -37,5 +37,3 @@ about:
 source:
   path: ../spookipy
 
-
-  
