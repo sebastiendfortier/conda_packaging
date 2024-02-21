@@ -202,14 +202,14 @@ RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/jupyter-rsession-proxy
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-COPY transfer.sh /home/$UNAME/transfer.sh 
+# COPY transfer.sh /home/$UNAME/transfer.sh 
 
-USER root
+# USER root
 
-RUN rm -rf /*.deb
+# RUN rm -rf /*.deb
 
-USER $UNAME
+# USER $UNAME
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies
+# WORKDIR /home/$UNAME/conda_packaging/conda_recipies
