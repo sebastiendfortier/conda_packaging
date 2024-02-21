@@ -23,3 +23,6 @@
 [submodule "conda_recipies/spookipy/spookipy"]
 	path = conda_recipies/spookipy/spookipy
 	url = https://github.com/sebastiendfortier/spookipy.git
+[submodule "conda_recipies/jupyter-rsession-proxy/jupyter-rsession-proxy"]
+	path = conda_recipies/jupyter-rsession-proxy/jupyter-rsession-proxy
+	url = https://github.com/sebastiendfortier/jupyter-rsession-proxy.git
