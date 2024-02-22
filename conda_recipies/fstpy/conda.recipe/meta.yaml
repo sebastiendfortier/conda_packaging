@@ -12,13 +12,14 @@ requirements:
     - pandas >=1.2.4
     - numpy >=1.19.5
     - dask >=2021.8.0
+    - fortiers::eccc_rpnpy >=2.2.0rc3
 
   run:
     - python
     - pandas >=1.2.4
     - numpy >=1.19.5
     - dask >=2021.8.0
-    - eccc_rpnpy >=2.2.0rc3
+    - fortiers::eccc_rpnpy >=2.2.0rc3
 
 test:
   imports:
