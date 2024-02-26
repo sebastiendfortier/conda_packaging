@@ -1,0 +1,23 @@
+package:
+  name: eccc_fst_tools
+  version: 20.0.3.1
+
+
+about:
+  home: https://gitlab.science.gc.ca/RPN-SI/fst-tools
+  license: LGPL-3.0
+  license_family: LGPL
+  license_file: LICENSE
+  summary: 'MSC binaries to work with fst files'
+  build_environment:
+   - linux-64
+   - glibc=2.23
+
+
+requirements:
+  run:
+    - eccc_support_libs >=2023.12.0
+
+source:
+  path: ../../fst-tools
+
