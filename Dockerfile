@@ -138,7 +138,7 @@ COPY --from=builder /home/$UNAME/rmn_bins /home/$UNAME/rmn_bins
 
 WORKDIR /home/$UNAME
 
-RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && sleep 1 && sleep 1
+RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && sleep 2
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 

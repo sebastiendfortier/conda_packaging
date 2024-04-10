@@ -1,6 +1,6 @@
 package:
   name: fstd2nc
-  version: 0.20231105.2
+  version: 0.20240401.0
 
 build:
   number: 1
@@ -33,7 +33,7 @@ requirements:
 test:
   imports:
     - fstd2nc
- 
+
 about:
   home: https://github.com/neishm/fstd2nc
   license: LGPL-3.0
@@ -45,4 +45,3 @@ source:
   path: ../fstd2nc
 
 
- 
