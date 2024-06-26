@@ -1,6 +1,6 @@
 package:
   name: jupyter-rsession-proxy
-  version: 2.1.0
+  version: 2.2.1
 
 build:
   number: 0
@@ -9,11 +9,11 @@ build:
 requirements:
   build:
     - python
-    - jupyter-server-proxy>=3.2.2
+    - jupyter-server-proxy>=3.2.3,!=4.0.0,!=4.1.0
 
   run:
     - python
-    - jupyter-server-proxy>=3.2.2
+    - jupyter-server-proxy>=3.2.3,!=4.0.0,!=4.1.0
 
 about:
   home: https://github.com/sebastiendfortier/jupyter-rsession-proxy
