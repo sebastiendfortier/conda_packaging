@@ -138,7 +138,7 @@ RUN mamba create -q -y -n builder boa conda-build conda-verify anaconda-client
 
 WORKDIR /home/$UNAME
 
-RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && echo '1'
+RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && echo '3'
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 
@@ -197,11 +197,11 @@ WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 
 # RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-# WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstd2nc
+WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstd2nc
 
-# RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstd2nc/setup.py
+RUN sed -i "s/,'fstd2nc-deps >= 0.20200304.0'//g" fstd2nc/setup.py
 
-# RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 # # WORKDIR /home/$UNAME/conda_packaging/conda_recipies/fstpy
 
@@ -223,9 +223,9 @@ WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 
 # RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
-WORKDIR /home/$UNAME/conda_packaging/conda_recipies/jupyter-rsession-proxy
+#WORKDIR /home/$UNAME/conda_packaging/conda_recipies/jupyter-rsession-proxy
 
-RUN source activate builder && conda mambabuild conda.recipe -c fortiers
+#RUN source activate builder && conda mambabuild conda.recipe -c fortiers
 
 COPY transfer.sh /home/$UNAME/transfer.sh 
 

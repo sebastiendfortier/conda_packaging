@@ -3,7 +3,7 @@ package:
   version: 0.20240625.2
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
