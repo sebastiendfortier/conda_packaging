@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Install the Python package
-$PYTHON -m pip istall .
+$PYTHON -m pip install .
 
