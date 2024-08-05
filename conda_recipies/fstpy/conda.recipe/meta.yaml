@@ -1,9 +1,9 @@
 package:
   name: fstpy
-  version: 2024.02.01
+  version: 2024.04.00
 
 build:
-  number: 3
+  number: 0
   noarch: python
 
 requirements:
@@ -13,6 +13,7 @@ requirements:
     - numpy >=1.19.5
     - dask >=2021.8.0
     - fortiers::eccc_rpnpy >=2.2.0rc3
+    - fortiers::cmcdict >=2024.07.22
 
   run:
     - python
@@ -20,6 +21,7 @@ requirements:
     - numpy >=1.19.5
     - dask >=2021.8.0
     - fortiers::eccc_rpnpy >=2.2.0rc3
+    - fortiers::cmcdict >=2024.07.22
 
 test:
   imports:

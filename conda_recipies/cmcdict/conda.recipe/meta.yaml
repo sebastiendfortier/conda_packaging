@@ -1,6 +1,6 @@
 package:
   name: cmcdict
-  version: 2023.05.18
+  version: 2024.07.22
 
 build:
   number: 0
