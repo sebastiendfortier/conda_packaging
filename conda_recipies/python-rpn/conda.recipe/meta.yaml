@@ -3,7 +3,7 @@ package:
   version: 2.2.0rc3
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -15,7 +15,7 @@ requirements:
   run:
     - python
     - pytz
-    - numpy
+    - numpy >1.22
     - scipy
     - eccc_librmn >=20.0.3
     - eccc_libezinterpv >=20.0.1
