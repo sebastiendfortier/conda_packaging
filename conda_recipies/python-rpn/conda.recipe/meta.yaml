@@ -10,12 +10,12 @@ requirements:
     - python
     - setuptools
     - pytz
-    - numpy >1.22
+    - numpy
 
   run:
     - python
     - pytz
-    - numpy >1.22
+    - numpy
     - scipy
     - eccc_librmn >=20.0.3
     - eccc_libezinterpv >=20.0.1
