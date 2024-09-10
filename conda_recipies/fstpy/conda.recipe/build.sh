@@ -1,5 +1,4 @@
 #!/bin/bash
 
 # Install the Python package
-$PYTHON setup.py install
-
+$PYTHON -m pip install . -vv --no-deps --no-build-isolation

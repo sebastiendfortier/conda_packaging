@@ -1,9 +1,15 @@
+{% set data1 = load_setup_py_data(from_recipe_dir=True) %}
+{% set data2 = load_setup_py_data(from_recipe_dir=True, recipe_dir='..') %}
+
+{{ data1 }}
+{{ data2 }}
+
 package:
   name: fstpy
-  version: 2024.02.01
+  version: 2024.08.00
 
 build:
-  number: 3
+  number: 0
   noarch: python
 
 requirements:
@@ -13,6 +19,7 @@ requirements:
     - numpy >=1.19.5
     - dask >=2021.8.0
     - fortiers::eccc_rpnpy >=2.2.0rc3
+    - fortiers::cmcdict >=2024.07.22
 
   run:
     - python
@@ -20,18 +27,33 @@ requirements:
     - numpy >=1.19.5
     - dask >=2021.8.0
     - fortiers::eccc_rpnpy >=2.2.0rc3
+    - fortiers::cmcdict >=2024.07.22
 
 test:
   imports:
     - fstpy
 
 about:
-  home: https://github.com/sebastiendfortier/fstpy
+  home: ''
   license: GPL-3.0
   license_family: GPL
   license_file: LICENSE
-  summary: 'MSC Pandas/dask interface for RPN standard files (from Environment Canada).'
+  summary: ''
 
 source:
   path: ../fstpy
 
+
+{% set cwd = os.getcwd() %}
+{% set parent_dir = os.listdir('..') %}
+
+{{ '# Current working directory:' }}
+{{ cwd }}
+{{ '# Parent directory contents:' }}
+{{ parent_dir }}
+{{ '# Data from load_setup_py_data (recipe dir):' }}
+{{ data1 }}
+{{ '# Data from load_setup_py_data (parent dir):' }}
+{{ data2 }}
+{{ '# Version from regex:' }}
+{{ version }}
