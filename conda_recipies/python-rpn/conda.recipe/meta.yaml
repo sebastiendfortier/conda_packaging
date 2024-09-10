@@ -3,14 +3,14 @@ package:
   version: 2.2.0rc3
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - python
     - setuptools
     - pytz
-    - numpy >1.22
+    - numpy
 
   run:
     - python
