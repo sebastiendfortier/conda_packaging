@@ -138,7 +138,7 @@ RUN mamba create -q -y -n builder boa conda-build conda-verify anaconda-client
 
 WORKDIR /home/$UNAME
 
-RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && echo '3'
+RUN git clone --recursive https://github.com/sebastiendfortier/conda_packaging.git && echo '00'
 
 WORKDIR /home/$UNAME/conda_packaging/conda_recipies/
 
